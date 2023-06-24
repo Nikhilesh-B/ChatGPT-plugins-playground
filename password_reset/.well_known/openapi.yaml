@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info:
+  title: Password reset plugin
+  description: A plugin that allows users to reset passwords using ChatGPT. 
+  version: 'v1'
+servers:
+  - url: http://localhost:8888
+paths:
+  /submit-verification-information:
+    post:
+      operationId: submitInformation
+      summary: Submit idenity verification information
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/verificationRequest"
+        required: true
+      responses:
+        "200":
+          description: Succesful verification
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/verificationResponse'
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+      security:
+        - HTTPBearer: []
+components:
+  schemas:
+    verificationRequest:
+      type: object
+      properties:
+        first_name: 
+          type: string
+          description: The first name of the user requessting password reset.
+        last_name: 
+          type: string
+          description: The last name of the user requesting password reset.
+        id_number:
+          type: int
+          description: The veirification id of the user requesting a password reset. 
+    verificationResponse:
+      type: object
+      properties:
+        return_string:
+          type: string
+          description: successful return of new password to user
+    HTTPValidationError:
+      type: object
+      properties: 
+        return_string:
+          type: string 
+          description: incorrect information provided please try again

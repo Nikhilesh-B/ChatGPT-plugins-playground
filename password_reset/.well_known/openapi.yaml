@@ -44,7 +44,7 @@ components:
           description: The last name of the user requesting password reset.
         id_number:
           type: int
-          description: The veirification id of the user requesting a password reset. 
+          description: The verification id of the user requesting a password reset. 
     verificationResponse:
       type: object
       properties:

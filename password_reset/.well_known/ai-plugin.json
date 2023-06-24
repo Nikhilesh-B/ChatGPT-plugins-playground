@@ -11,7 +11,7 @@
         "type": "openapi",
         "url": "http://localhost:8888/openapi.yaml"
     },
-    "logo_url": "http://localhost:8888/logo.png",
+    "logo_url": "http://localhost:8888/logo.jpg",
     "contact_email": "nb2953@columbia.edu",
     "legal_info_url": "http://www.example.com/legal"
 }

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 import random
 import os
 from flask_cors import CORS
@@ -20,6 +20,10 @@ animals = ['Giraffe',
            'Elephant', 
            'Crocodile']
 
+
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('./home.html')
 
 @app.route('/.well-known/<path:filename>')
 def well_known(filename):

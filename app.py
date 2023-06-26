@@ -1,9 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 import random
-from flask_cors import CORS
-import subprocess
 import os
-
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
@@ -42,6 +40,5 @@ def verify_information():
     
     return {}
     
-
 if __name__ == "__main__":
     app.run(debug=False)

@@ -27,5 +27,8 @@ def verify_information():
     if fname.upper()==FNAME and lname.upper()==LNAME and idnumber == ID:
         new_password = random.choice(animals)+str(random.randint(0,100))
         robj = {"return_string":"Your new password is "+new_password}
-
         return jsonify(robj)
+    
+
+if __name__ == "__main__":
+    app.run(debug=False)

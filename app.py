@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template
 import random
 import os
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
@@ -21,9 +21,11 @@ animals = ['Giraffe',
            'Crocodile']
 
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def home():
-    return render_template('./home.html')
+    print("hello")
+    print("Triggered")
+    return render_template('home.html')
 
 @app.route('/.well-known/<path:filename>')
 def well_known(filename):
@@ -41,8 +43,7 @@ def verify_information():
         new_password = random.choice(animals)+str(random.randint(0,100))
         robj = {"return_string":"Your new password is "+new_password}
         return jsonify(robj)
-    
-    return {}
+    return jsonify({'error': 'Verification failed'}), 403
     
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False, host='localhost')

@@ -46,4 +46,4 @@ def verify_information():
     return jsonify({'error': 'Verification failed'}), 403
     
 if __name__ == "__main__":
-    app.run(debug=False, host='localhost')
+    app.run(debug=True, host='localhost')

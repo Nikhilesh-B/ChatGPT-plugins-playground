@@ -4,7 +4,7 @@ info:
   description: A plugin that allows users to reset passwords using ChatGPT. 
   version: 'v1'
 servers:
-  - url: http://localhost:5000
+  - url: http://localhost:8000
 paths:
   /submit-verification-information:
     post:

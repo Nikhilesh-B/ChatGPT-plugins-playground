@@ -3,11 +3,10 @@ import random
 import os
 from flask_cors import CORS, cross_origin
 
-app = Flask(__name__)
+app = Flask(__name__.split('.')[0])
 CORS(app)
 
 well_known_dir = os.path.join(app.root_path, '.well-known')
-
 FNAME, LNAME, ID = 'NIKHILESH', 'BELULKAR', 2
 animals = ['Giraffe', 
            'Snake', 
@@ -19,7 +18,6 @@ animals = ['Giraffe',
            'Squirrel', 
            'Elephant', 
            'Crocodile']
-
 
 @app.route('/')
 def home():
@@ -46,4 +44,4 @@ def verify_information():
     return jsonify({'error': 'Verification failed'}), 403
     
 if __name__ == "__main__":
-    app.run(debug=True, host='localhost')
+    app.run(debug=True, host='localhost', port=8000)

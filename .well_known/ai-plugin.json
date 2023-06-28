@@ -9,9 +9,9 @@
     },
     "api": {
         "type": "openapi",
-        "url": "http://localhost:5000/openapi.yaml"
+        "url": "http://localhost:8000/openapi.yaml"
     },
-    "logo_url": "http://localhost:5000/logo.jpg",
+    "logo_url": "http://localhost:8000/logo.jpg",
     "contact_email": "nb2953@columbia.edu",
     "legal_info_url": "http://www.example.com/legal"
 }

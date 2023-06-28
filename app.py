@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template
 import random
 import os
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 app = Flask(__name__.split('.')[0])
 CORS(app)

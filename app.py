@@ -21,13 +21,10 @@ animals = ['Giraffe',
 
 @app.route('/')
 def home():
-    print("hello")
-    print("Triggered")
     return render_template('home.html')
 
 @app.route('/.well-known/<path:filename>')
 def well_known(filename):
-    print("Triggered")
     return send_from_directory(well_known_dir, filename)
 
 
@@ -46,4 +43,4 @@ def verify_information():
     return jsonify({'error': 'Verification failed'}), 403
     
 if __name__ == "__main__":
-    app.run(debug=True, host='localhost', port=8000)
+    app.run(debug=True, host='localhost', port=8001)

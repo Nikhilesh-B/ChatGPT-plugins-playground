@@ -27,12 +27,14 @@ def home():
 
 @app.route('/.well-known/<path:filename>')
 def well_known(filename):
+    print("Triggered")
     return send_from_directory(well_known_dir, filename)
 
 
 @app.route('/submit-verification-information', methods=['POST'])
 def verify_information():
     user_information = request.get_json()
+    print("User information=", user_information)
     fname = user_information["first_name"]
     lname = user_information["last_name"]
     idnumber = user_information["id_number"]

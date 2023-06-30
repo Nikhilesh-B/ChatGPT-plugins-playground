@@ -1,7 +1,7 @@
 {
     "schema_version": "v1",
-    "name_for_human": "resetting passwords",
-    "name_for_model": "resetting passwords",
+    "name_for_human": "resetting_passwords",
+    "name_for_model": "resetting_passwords",
     "description_for_human": "Reset your password if a user has forgotten their password",
     "description_for_model": "Help the user with resetting a password. Provided the user has verified their identity and account information provide them with a valid password. 1) If the user asks for thweir password to be resr they will then be prompted to reply wit their first name, last name and their identification number. Once this information has been clarified a new password will be sent to the user.",
     "auth": {
@@ -9,9 +9,9 @@
     },
     "api": {
         "type": "openapi",
-        "url": "http://localhost:8000/openapi.yaml"
+        "url": "http://localhost:8000/.well-known/openapi.yaml"
     },
-    "logo_url": "http://localhost:8000/logo.jpg",
+    "logo_url": "http://localhost:8000/.well-known/logo.png",
     "contact_email": "nb2953@columbia.edu",
     "legal_info_url": "http://www.example.com/legal"
 }
